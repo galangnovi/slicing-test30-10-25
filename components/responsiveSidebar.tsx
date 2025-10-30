@@ -26,7 +26,6 @@ export default function ResponsiveSidebar() {
 
   return (
     <div className="md:hidden">
-      {/* Tombol toggle untuk mode mobile */}
       <button
         onClick={handleToggle}
         className="fixed top-4 left-4 z-30 bg-[#17A9E2] text-white p-2 rounded-md md:hidden"
@@ -34,13 +33,11 @@ export default function ResponsiveSidebar() {
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 z-20 bg-white shadow-lg h-full w-[270px] flex flex-col transition-transform duration-300 ease-in-out
           ${open ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0 md:static md:shadow-none`}
       >
-        {/* Logo */}
         <div className="flex justify-center mt-6">
           <img src="/img/loan-logo.png" className="w-[110px]" alt="Logo" />
         </div>

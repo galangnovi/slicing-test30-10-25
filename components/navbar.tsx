@@ -7,9 +7,9 @@ export default function Navbar({text}:{text:string}){
     const pathname = usePathname()
     const firstSegment = pathname.split("/")[1] || "";
     const pageTitle = firstSegment
-        .split("-") // pisah berdasarkan "-"
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // huruf pertama kapital
-        .join(" "); // gabung kembali dengan spasi
+        .split("-") 
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
+        .join(" "); 
     const name = "YOHANNES AFFANDY"
 return(
     <div className="flex justify-center z-20 w-full top-0 fixed border-b-1 border-gray-300 h-[99px] bg-[#FFFFFF]">
