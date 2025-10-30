@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Save, Upload } from 'lucide-react';
 import { Triangle } from 'lucide-react';
 
@@ -37,12 +37,22 @@ export default function Uploaddocs({setPage}:{setPage:(value:number)=>void}) {
     { label: "File Kekurangan 2", name: "file2", content:"--Upload File Kekurangan 2--" },
   ];
 
+  useEffect(() => {
+      if (window.innerWidth < 473) {
+        document.body.style.zoom = "35%";
+      } else if (window.innerWidth < 768) {
+        document.body.style.zoom = "60%";
+      } else {
+        document.body.style.zoom = "80%";
+      }
+      }, []);
+
   return (
-    <div>
-        <div className="border py-[20px] px-[30px] border-[#C1C1C1] shadow-sm bg-white">
+    <div className="-mr-89 md:mr-0 ">
+        <div className="border py-[20px] p-1 md:p-1 md:px-[30px] border-[#C1C1C1] shadow-sm bg-white">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-[#005274] text-white mx-[-30px] my-[-20px] font-semibold flex items-center justify-between w-[1450px] h-[80px]"
+                className="bg-[#005274] text-white mx-[-30px] md:my-[-20px] font-semibold flex items-center justify-between w-full md:w-[1450px] h-[80px]"
             >
                 <div className="flex items-center space-x-2 py-[20px] px-[30px]">
                 {isOpen ? <Triangle className="rotate-180 h-[18px] w-[18px]"  fill="#ffffff"/> : <Triangle className="h-[20px] w-[20px]"  fill="#ffffff"/>}
@@ -61,7 +71,7 @@ export default function Uploaddocs({setPage}:{setPage:(value:number)=>void}) {
                         {item.label}
                     </label>
 
-                    <div className="relative mt-2 md:mt-0 w-[500px] pl-[24px] pr-[34px] flex-shrink-0 h-[50px] flex items-center">
+                    <div className="relative mt-2 md:mt-0 md:w-[500px] w-full pl-[24px] pr-[34px] flex-shrink-0 h-[50px] flex items-center">
                         <input
                         type="file"
                         id={item.name}
@@ -84,7 +94,7 @@ export default function Uploaddocs({setPage}:{setPage:(value:number)=>void}) {
         <div className="border mt-[32px] py-[20px] px-[30px] border-[#C1C1C1] shadow-sm bg-white">
             <button
                 onClick={() => setIsOpen2(!isOpen2)}
-                className="bg-[#005274] text-white mx-[-30px] my-[-20px] font-semibold flex items-center justify-between w-[1450px] h-[80px]"
+                className="bg-[#005274] text-white md:mx-[-30px] my-[-20px] font-semibold flex items-center justify-between md:w-[1450px] w-full h-[80px]"
             >
                 <div className="flex items-center space-x-2 py-[20px] px-[30px]">
                 {isOpen2 ? <Triangle className="rotate-180 h-[18px] w-[18px]"  fill="#ffffff"/> : <Triangle className="h-[20px] w-[20px]"  fill="#ffffff"/>}

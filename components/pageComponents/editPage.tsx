@@ -42,15 +42,13 @@ export default function EditPage({id}:{id:number}) {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-100 p-6 rounded-md">
-      {/* Kiri */}
       <div className="space-y-4">
-        {/* Bank */}
         <div>
           <label className="block text-[22px] font-semibold text-black mb-1">Bank</label>
           <select
             value={form.bank}
             onChange={(e) => setForm({ ...form, bank: e.target.value })}
-            className="w-[686px] h-[50px] text-[400] border border-[#C1C1C1] rounded-md p-2"
+            className="md:w-[686px] w-full h-[50px] text-[400] border border-[#C1C1C1] rounded-md p-2"
           >
             <option value="Mandiri">Mandiri</option>
             <option value="Panin">Panin</option>
@@ -62,13 +60,12 @@ export default function EditPage({id}:{id:number}) {
           </select>
         </div>
 
-        {/* Jenis Product */}
         <div>
           <label className="block text-[22px] font-semibold text-black mb-1">Jenis Product</label>
           <select
             value={form.product}
             onChange={(e) => setForm({ ...form, product: e.target.value })}
-            className="w-[686px] h-[50px] text-[400] border border-[#C1C1C1] rounded-md p-2"
+            className="md:w-[686px] w-full h-[50px] text-[400] border border-[#C1C1C1] rounded-md p-2"
           >
             <option value="Bunga Special Tengah Imlek 2023">Bunga Special Tengah Imlek 2023</option>
             <option value="Panin KPR & KPR XTRA">Panin KPR & KPR XTRA</option>
@@ -84,7 +81,6 @@ export default function EditPage({id}:{id:number}) {
           </select>
         </div>
 
-        {/* Promotional Product */}
         <div className="flex items-center space-x-2">
           <input
             type="checkbox"
@@ -96,7 +92,6 @@ export default function EditPage({id}:{id:number}) {
         </div>
         <DateRangeInput/>
 
-        {/* Jaminan */}
         <div>
           <label className="block text-[22px] font-semibold text-black mb-3 mt-6">Jaminan</label>
           <div className="grid grid-cols-2 gap-2">
@@ -115,7 +110,6 @@ export default function EditPage({id}:{id:number}) {
           </div>
         </div>
 
-        {/* Target Market */}
         <div>
           <label className="block text-[22px] font-semibold text-black mb-3 mt-6">Target Market</label>
           <div className="grid grid-cols-2 gap-2">
@@ -134,9 +128,8 @@ export default function EditPage({id}:{id:number}) {
           </div>
         </div>
 
-        {/* Komisi / Appraisal / Floating */}
         {["komisi", "appraisal", "floating"].map((key) => (
-          <div key={key} className="w-[686px] mt-6">
+          <div key={key} className="md:w-[686px] w-full mt-6">
             <label className="block text-[22px] font-semibold text-black mb-1 capitalize">
               {key}
             </label>

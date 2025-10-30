@@ -32,13 +32,13 @@ export default function BankCard() {
   return (
     <div className="w-full mt-[45px] flex flex-col items-start justify-start gap-[30px]">
         {bankData.map((data)=>(
-    <div key={data.id} className="flex items-center justify-start w-full h-[300px] bg-white border p-7 border-gray-200 rounded-lg shadow-sm  hover:shadow-md transition-all duration-300">
-      <div className="flex flex-col items-start w-[544px] h-full mb-7">
+    <div key={data.id} className="flex items-center justify-start md:w-full h-[300px] bg-white border p-3 md:p-7 border-gray-200 rounded-lg shadow-sm  hover:shadow-md transition-all duration-300">
+      <div className="flex flex-col items-start w-[400px] md:w-[544px] h-full mb-7">
         <div className="flex w-full justify-center">
-            <img src={`/img/${data.icon}`} alt={data.bank} className="w-[258px] h-[150px] object-contain" />
+            <img src={`/img/${data.icon}`} alt={data.bank} className="md:w-[258px] w-55 md:h-[150px] object-contain" />
         </div>
         <div className="flex w-full justify-start mt-1">
-            <div className="flex flex-col w-[283px] h-full border-r-1 pr-10 items-center">
+            <div className="flex flex-col md:w-[283px] h-full border-r-1 md:pr-10 items-center">
                 <p className="text-[20px] font-medium text-[#707A83]">Rating:</p>
                 <div className="flex mt-3 items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -62,7 +62,7 @@ export default function BankCard() {
                 {data.review} Reviews
               </span>
             </div>
-            <div className="flex flex-col w-full items-center">
+            <div className="flex flex-col md:w-full items-center">
               <p className="text-[20px] font-medium text-[#707A83]">User:</p>
               <span className="font-medium text-[20px] text-black mt-2">{data.user}</span> 
               <p className="font-medium text-[16px] text-black mt-3">Users yearly</p>
@@ -70,7 +70,7 @@ export default function BankCard() {
         </div>
       </div>
 
-       <div className="w-[850px] h-[230px]">
+       <div className="md:w-[850px] w-120 md:h-[230px] h-[300px]">
         <div className="flex">
           <h2 className="text-[35px] font-semibold text-black">
             {data.bank}{" "}

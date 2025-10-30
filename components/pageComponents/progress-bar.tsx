@@ -27,12 +27,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep }) => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center w-full mr-20 mt-2">
-      {/* Garis dan Titik */}
+    <div className="flex flex-col justify-center items-center w-full mr-3 md:mr-20 mt-2">
       <div className="relative flex items-center justify-center w-full">
-        
         <div className="absolute top-1/9 left-12 w-[94%] h-2 bg-gray-300 -translate-y-1/2"></div>
-
         <div
           className="absolute top-1/9 left-12 h-2 bg-[#014B67] -translate-y-1/2 transition-all duration-500"
           style={{

@@ -1,6 +1,6 @@
 'use client'
 import ProgressBar from "@/components/pageComponents/progress-bar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowLeft } from 'lucide-react';
 import PromoCard from "@/components/cardForm";
 import Uploaddocs from "@/components/upload";
@@ -26,12 +26,22 @@ export default function EditApplication(){
             setPage(4)
         }
     }
+    useEffect(() => {
+        if (window.innerWidth < 473) {
+          document.body.style.zoom = "35%";
+        } else if (window.innerWidth < 768) {
+          document.body.style.zoom = "60%";
+        } else {
+          document.body.style.zoom = "80%";
+        }
+        }, []);
+
     return(
         <div className="mt-25">
-            <div className="h-[150px] pl-80 bg-white w-full flex justify-center items-center">
+            <div className="h-[150px] pl-3 md:pl-80 bg-white w-full flex justify-center items-center">
                 <ProgressBar currentStep={page}/>
             </div>
-            <div className="ml-68 pl-12 mr-20">
+            <div className="md:ml-68 md:pl-12 md:mr-20">
                 <div className="flex w-full justify-between items-center h-[145px]">
                     <button onClick={handleBackClick} className='h-[60px] w-[60px] hover:cursor-pointer hover:translate-1 transition duration-300 flex justify-center items-center rounded-full bg-[#37B5E7]'>
                         <ArrowLeft className='text-white' size={42}/>
@@ -42,13 +52,10 @@ export default function EditApplication(){
                         <ArrowLeft className='text-white' size={42}/>
                     </button>
                 </div>
-                <div className="w-[1537px] p-[30px] flex flex-col justify-center items-center bg-white rounded-xl mb-20">
+                <div className="md:w-[1537px] w-275 p-[30px] flex flex-col justify-center items-center bg-white rounded-xl mb-20">
                     {page===7 ? <PromoCard/> : page===4 ? <Uploaddocs setPage={setPage}/> : <AddressForm setPage={setPage} />}
                 </div>
-                
             </div>
-             
-            
         </div>
     )
 }

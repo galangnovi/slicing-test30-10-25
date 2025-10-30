@@ -12,10 +12,18 @@ export default function Dashboard(){
         {icon:"shopBlue.png", label:"PRODUCT", value:80},
         {icon:"bankBlue.png", label:"BANK", value:30}
     ];
-
+     
+    
+  
     useEffect(() => {
-    document.body.style.zoom = "80%";
-  }, []);
+    if (window.innerWidth < 473) {
+      document.body.style.zoom = "35%";
+    } else if (window.innerWidth < 768) {
+      document.body.style.zoom = "60%";
+    } else {
+      document.body.style.zoom = "80%";
+    }
+    }, []);
 
     const notificationsData = [
   { timeAgo: '2 hrs', status: 'updated', mainText: 'admin_branch has updated', subText: 'Harry Handoko - Contact | MYCRM', hidden: true },
@@ -24,8 +32,8 @@ export default function Dashboard(){
   { timeAgo: '4 hrs', status: 'application', mainText: 'admin_branch has updated', subText: 'Harry Handoko - Contact | MYCRM', hidden: false },
 ];
     return(
-        <div className="mt-[99px] ml-[310px]">
-            <div className="bg-[#ffff] h-[230px] z-10 w-full shadow-2xs flex items-center p-3 right-0 top-24.8 fixed">
+        <div className="mt-[99px] ml-6 md:ml-[310px] mb-10">
+            <div className="hidden md:bg-[#ffff] md:h-[230px] md:z-10 md:w-full md:shadow-2xs md:flex md:items-center md:p-3 md:right-0 md:top-24.8 md:fixed">
                 <div className='rounded-full h-[150px] w-[150px] ml-80 flex justify-center items-center overflow-hidden'>
                     <img src="/img/user.png" className="h-[150px]" alt="" />
                 </div>
@@ -64,10 +72,10 @@ export default function Dashboard(){
                     </div>
                 </div>
             </div>
-            <div className='flex'>
+            <div className='flex flex-col items-center md:items-start justify-center md:flex-row'>
             <div>
             <div>
-                <div className=" h-[142px] w-[1104px] justify-between flex absolut mt-71">
+                <div className=" h-[142px] w-[1104px] justify-between flex absolut md:mt-71 mt-2">
                     {startcard.map((card, index)=>(
                         <div key={index} className="flex h-full pt-8 pb-8 pl-6 pr-6 bg-[#ffff] rounded-md flex gap-9 items-center justify-center hover:cursor-pointer transition-transform duration-500 hover:translate-1 shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
                             <div className="h-[70px] w-[70px] bg-[#E2F0FF] rounded-full flex items-center justify-center">
@@ -102,7 +110,7 @@ export default function Dashboard(){
                 <ApprovalChart/>
             </div>
             </div>
-            <div className='ml-[34px] mt-[285px]'>
+            <div className='ml-[34px] mt-5 md:mt-[285px]'>
                 <NotificationTimeline notifications={notificationsData}/>
             </div>
         </div>

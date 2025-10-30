@@ -2,6 +2,7 @@ import { Dropdown, DropdownItem } from "flowbite-react";
 import { ChevronDown } from "lucide-react";
 import { Plus } from 'lucide-react';
 import BankCard from "../bankCard";
+import { useEffect } from "react";
 
 export default function Bank(){
     const mainBars =[
@@ -12,8 +13,8 @@ export default function Bank(){
         {icon:"takeOver.png", label:"Take Over dan Bridging Loan", style:""},
     ]
     return(
-        <div className="mt-10 ml-12">
-            <div className="flex gap-10">
+        <div className="mt-10 md:ml-12">
+            <div className="flex gap-1 md:gap-10">
                 {mainBars.map((main, index)=>(
                     <div key={index} className="w-[275px] h-[180px] rounded-xl border-[1px] border-[#C1C1C1] gap-3 bg-white flex flex-col justify-center items-center pb-[15px] pt-[15px] pl-[33px] pr-[33px]">
                         <img src={`/img/${main.icon}`} className={`${main.style}`} alt="" />

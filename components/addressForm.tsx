@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Save } from 'lucide-react';
 
@@ -96,6 +96,15 @@ export default function AddressForm({setPage}:{setPage:(value:number)=>void}){
       domisiliSesuaiKTP: false,
     });
   };
+  useEffect(() => {
+      if (window.innerWidth < 473) {
+        document.body.style.zoom = "35%";
+      } else if (window.innerWidth < 768) {
+        document.body.style.zoom = "60%";
+      } else {
+        document.body.style.zoom = "80%";
+      }
+      }, []);
 
     return(
         <div>
