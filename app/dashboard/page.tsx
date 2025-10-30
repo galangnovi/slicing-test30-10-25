@@ -3,6 +3,7 @@ import CircleChart from '@/components/circleChart';
 import ApprovalChart from '@/components/dounutCart';
 import NotificationTimeline from '@/components/notificationBar';
 import { SquarePen } from 'lucide-react';
+import { useEffect } from 'react';
 
 export default function Dashboard(){
     const startcard =[
@@ -11,6 +12,10 @@ export default function Dashboard(){
         {icon:"shopBlue.png", label:"PRODUCT", value:80},
         {icon:"bankBlue.png", label:"BANK", value:30}
     ];
+
+    useEffect(() => {
+    document.body.style.zoom = "80%";
+  }, []);
 
     const notificationsData = [
   { timeAgo: '2 hrs', status: 'updated', mainText: 'admin_branch has updated', subText: 'Harry Handoko - Contact | MYCRM', hidden: true },
